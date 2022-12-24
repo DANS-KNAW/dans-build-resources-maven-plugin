@@ -15,6 +15,7 @@
  */
 package nl.knaw.dans.maven.buildresources;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -33,8 +34,8 @@ import static java.nio.charset.StandardCharsets.UTF_8;
 /**
  * Read
  */
-@Mojo(name = "get-license-header-template", defaultPhase = LifecyclePhase.GENERATE_RESOURCES)
-public class LicenseHeaderTemplateMojo extends AbstractMojo {
+@Mojo(name = "get-license-header-template", defaultPhase = LifecyclePhase.GENERATE_SOURCES)
+public class GetLicenseHeaderTemplateMojo extends AbstractMojo {
 
     /**
      * Name of a license header template included in the plugin. (Currently only 'apache2.txt'.)
@@ -53,6 +54,7 @@ public class LicenseHeaderTemplateMojo extends AbstractMojo {
         Path outputFile = targetDir.toPath().resolve(license);
         try {
             getLog().info(String.format("Copying %s to %s", license, outputFile));
+            FileUtils.createParentDirectories(outputFile.toFile());
             Files.write(outputFile, getLicenseHeaderText().getBytes(UTF_8));
         }
         catch (IOException e) {

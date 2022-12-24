@@ -22,7 +22,6 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +29,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RmpScriptlet {
+public class RpmScriptlet {
     private static final Pattern includeDirectivePattern = Pattern.compile("^#include\\s+<(.*?)>", Pattern.MULTILINE);
 
     private final Path src;
@@ -38,7 +37,7 @@ public class RmpScriptlet {
 
     private final Log log;
 
-    public RmpScriptlet(Path src, Path target, Log log) {
+    public RpmScriptlet(Path src, Path target, Log log) {
         this.src = src;
         this.target = target;
         this.log = log;
