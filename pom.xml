@@ -37,6 +37,8 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <maven.version>3.5.0</maven.version>
+        <maven-plugin-plugin.version>3.6.4</maven-plugin-plugin.version>
+        <maven-release-plugin.version>3.0.0-M7</maven-release-plugin.version>
     </properties>
 
     <scm>
@@ -101,12 +103,12 @@
             <plugins>
                 <plugin>
                     <artifactId>maven-plugin-plugin</artifactId>
-                    <version>3.6.4</version>
+                    <version>${maven-plugin-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>3.0.0-M7</version>
+                    <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                         <autoVersionSubmodules>true</autoVersionSubmodules>
