@@ -57,13 +57,17 @@ public class GenerateRpmScriptletsMojo extends AbstractMojo {
     @Override
 
     public void execute() throws MojoExecutionException, MojoFailureException {
-        for (String name : srcFiles) {
-            try {
-                new RpmScriptlet(scriptletsSourceDir.toPath().resolve(name), scriptletsTargetDir.toPath().resolve(name), getLog()).generate();
+        if (scriptletsSourceDir.isDirectory()) {
+            for (String name : srcFiles) {
+                try {
+                    new RpmScriptlet(scriptletsSourceDir.toPath().resolve(name), scriptletsTargetDir.toPath().resolve(name), getLog()).generate();
+                }
+                catch (IOException e) {
+                    throw new MojoExecutionException(String.format("Could not generate scriptlet %s", name), e);
+                }
             }
-            catch (IOException e) {
-                throw new MojoExecutionException(String.format("Could not generate scriptlet %s", name), e);
-            }
+        } else {
+            getLog().info(String.format("No scriptlets source directory found at %s. Skipping scriptlet generation.", scriptletsSourceDir));
         }
     }
 }
