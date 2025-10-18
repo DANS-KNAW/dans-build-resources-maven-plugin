@@ -1,5 +1,7 @@
 SWAGGER_UI_VERSION=5.3.1
 
+set -e
+
 echo ">> START: add-swagger-ui.sh"
 echo "Removing previously downloaded swagger-ui if present..."
 if [ -d "target/swagger-ui" ]; then rm -fr target/swagger-ui; fi
