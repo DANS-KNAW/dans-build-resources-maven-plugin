@@ -1,4 +1,4 @@
-dans-nexus-maven-plugin
+dans-build-resources-maven-plugin
 =======================
 
 ![Build Status](https://github.com/DANS-KNAW/dans-build-resources-maven-plugin/actions/workflows/build.yml/badge.svg)
