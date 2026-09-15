@@ -36,7 +36,7 @@
     <name>DANS Build Resources Maven Plugin</name>
     <description>Maven plugin to generate resources required in the build of DANS modules</description>
 
-    <url>https://github.com/DANS-KNAW/dans-build-resources-maven-plugin</url>
+    <url>https://dans-knaw.github.io/dans-build-resources-maven-plugin</url>
 
     <scm>
         <developerConnection>scm:git:ssh://github.com/DANS-KNAW/${project.artifactId}</developerConnection>
