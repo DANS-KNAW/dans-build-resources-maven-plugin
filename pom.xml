@@ -22,7 +22,7 @@
     <parent>
         <groupId>nl.datastations</groupId>
         <artifactId>dans-core-systems-parent</artifactId>
-        <version>1.0.2-SNAPSHOT</version>
+        <version>1.0.2</version>
     </parent>
 
     <!-- This plugin will not be published to Maven Central, as it is only used by components that are not published to Maven Central, either.
