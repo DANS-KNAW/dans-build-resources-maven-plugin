@@ -22,8 +22,7 @@
     <parent>
         <groupId>nl.datastations</groupId>
         <artifactId>dans-core-systems-parent</artifactId>
-        <version>1.0.1</version>
-        <relativePath/>
+        <version>1.0.2-SNAPSHOT</version>
     </parent>
 
     <!-- This plugin will not be published to Maven Central, as it is only used by components that are not published to Maven Central, either.
@@ -45,43 +44,30 @@
         <url>https://github.com/DANS-KNAW/dans-build-resources-maven-plugin</url>
     </scm>
 
-    <properties>
-        <maven.version>3.9.16</maven.version>
-        <!-- maven-plugin-annotations are released by the maven-plugin-tools project, which has its own version
-             numbering, distinct from Maven core (${maven.version}). Keep it in sync with the maven-plugin-plugin.version
-             below, since that project releases both artifacts together. -->
-        <maven-plugin-plugin.version>3.15.2</maven-plugin-plugin.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>${maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>${maven-plugin-plugin.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
-            <version>${maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-model</artifactId>
-            <version>${maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-artifact</artifactId>
-            <version>${maven.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -99,13 +85,8 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <artifactId>maven-plugin-plugin</artifactId>
-                    <version>${maven-plugin-plugin.version}</version>
-                </plugin>
-                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>${maven-release-plugin.version}</version>
                     <configuration>
                         <tagNameFormat>v@{project.version}</tagNameFormat>
                     </configuration>
